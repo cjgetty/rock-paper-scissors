@@ -1,5 +1,3 @@
-// console.log(playRound(playerSelection, computerSelection));
-
 // Create a function to get computer's choice. This function should randomly select one of 'Rock', 'Paper', or 'Scissors' and return it.
 
 function getComputerChoice() {
@@ -34,3 +32,42 @@ const computerChoice = getComputerChoice();
 console.log(`Player chose: ${playerChoice}`);
 console.log(`Computer chose: ${computerChoice}`);
 console.log(playRound(playerChoice, computerChoice));
+
+function playGame() {
+    let playerScore = 0;
+    let computerScore = 0;
+
+    // Play five rounds
+    for (let round = 1; round <= 5; round++) {
+        console.log(`Round ${round}:`);
+
+        // Get player's choice using prompt
+        const playerChoice = prompt("Enter your choice (rock, paper, or scissors):");
+        const computerChoice = getComputerChoice();
+
+        console.log(`You chose: ${playerChoice}`);
+        console.log(`Computer chose ${computerChoice}`);
+
+        // Play the round and update the scores
+        const result = playRound(playerChoice, computerChoice);
+        console.log(result);
+
+        if (result.includes("win")) {
+            playerScore++;
+        } else if (result.includes("lose")) {
+            computerScore++;
+        }
+    }
+
+    // Determine the winner of the game.
+    if (playerScore > computerScore) {
+        console.log(`You have won the game! You had ${playerScore} points and Computer had ${computerScore} points.`);
+    } else if (playerScore < computerScore) {
+        console.log(`You have lost the game. Computer had ${computerScore} points and you had ${playerScore} points.`);
+    } else {
+        console.log(`It's a tie! Computer and player both have ${playerScore}`);
+    }
+}
+
+// Call the playGame function to start the game.
+playGame();
