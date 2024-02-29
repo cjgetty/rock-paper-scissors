@@ -24,15 +24,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// Test the functions. You can now test these functions by calling them and logging the results to the console.
-
-const playerChoice = "rock"; // You can change this to test different scenarios.
-const computerChoice = getComputerChoice();
-
-console.log(`Player chose: ${playerChoice}`);
-console.log(`Computer chose: ${computerChoice}`);
-console.log(playRound(playerChoice, computerChoice));
-
+// Write a function to keep track of scores and determine a winner at the end of five iterations.
 function playGame() {
     let playerScore = 0;
     let computerScore = 0;
