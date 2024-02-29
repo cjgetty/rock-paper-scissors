@@ -35,6 +35,13 @@ function playGame() {
 
         // Get player's choice using prompt
         const playerChoice = prompt("Enter your choice (rock, paper, or scissors):");
+
+        // Check to see if player canceled the prompt, and quit the game.
+        if (playerChoice === null) {
+            console.log("You canceled. Refresh to play.");
+            return;
+        }
+
         const computerChoice = getComputerChoice();
 
         console.log(`You chose: ${playerChoice}`);
